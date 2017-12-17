@@ -20,6 +20,7 @@ export class SearchBarComponent implements OnInit {
 
   ngOnInit() {
     this.searchKeyword = '';
+    // debounceTime 1 sec, for delaying getting user input
     this.keywordControl.valueChanges.debounceTime(1000).subscribe((value) => {
       this.searchKeyword = value;
       this.keywordOutput.emit(value);
