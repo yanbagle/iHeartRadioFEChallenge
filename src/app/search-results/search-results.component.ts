@@ -9,6 +9,8 @@ import {Artist} from './models/artist';
 })
 export class SearchResultsComponent implements OnInit {
 
+  // container / presentation comp structure
+  // search-results.comp is the container comp, responsible for making service calls and constructing artists array
   constructor(private service: SearchService) { }
 
   public artists: Artist[] = [];
@@ -16,6 +18,7 @@ export class SearchResultsComponent implements OnInit {
 
   ngOnInit() {}
 
+  // call service and create the array of artists info that will populate on the page
   public search(keyword): void {
     this.service.getArtists(keyword).subscribe((res) => {
       this.artists = [];

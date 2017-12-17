@@ -9,6 +9,7 @@ import 'rxjs/add/operator/debounceTime';
 })
 export class SearchBarComponent implements OnInit {
 
+  // search bar comp that gets the user input for the keyword
   public searchKeyword: string;
   public keywordControl = new FormControl();
   @Output() keywordOutput: EventEmitter<any> = new EventEmitter();

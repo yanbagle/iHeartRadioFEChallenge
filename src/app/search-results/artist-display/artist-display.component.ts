@@ -8,6 +8,7 @@ import {Artist} from '../models/artist';
 })
 export class ArtistDisplayComponent implements OnInit {
 
+  // comp for displaying the artists' results
   @Input() artists: Artist[];
 
   constructor() { }
