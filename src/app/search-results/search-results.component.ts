@@ -20,10 +20,12 @@ export class SearchResultsComponent implements OnInit {
     this.service.getArtists(keyword).subscribe((res) => {
       this.artists = [];
       for (let i = 0; i < 6; i++) {
-        const newArtist = {} as Artist;
-        newArtist.name = res.artists[i].artistName;
-        newArtist.imageUrl = this.imageUrl + res.artists[i].artistId + '?ops=fit(250,0)';
-        this.artists.push(newArtist);
+        if (i < res.artists.length) {
+          const newArtist = {} as Artist;
+          newArtist.name = res.artists[i].artistName;
+          newArtist.imageUrl = this.imageUrl + res.artists[i].artistId + '?ops=fit(250,0)';
+          this.artists.push(newArtist);
+        }
       }
     });
   }

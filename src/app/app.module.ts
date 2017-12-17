@@ -8,7 +8,7 @@ import { SearchBarComponent } from './search-results/search-bar/search-bar.compo
 import { ArtistDisplayComponent } from './search-results/artist-display/artist-display.component';
 import {SearchService} from './search-results/services/search-service';
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +21,8 @@ import {FormsModule} from '@angular/forms';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]

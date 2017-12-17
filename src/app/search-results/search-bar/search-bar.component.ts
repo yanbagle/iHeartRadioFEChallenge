@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl} from '@angular/forms';
+import 'rxjs/add/operator/debounceTime';
 
 @Component({
   selector: 'app-search-bar',
@@ -9,6 +10,7 @@ import {FormControl} from '@angular/forms';
 export class SearchBarComponent implements OnInit {
 
   public searchKeyword: string;
+  public keywordControl = new FormControl();
   @Output() keywordOutput: EventEmitter<any> = new EventEmitter();
 
   public changed = '';
@@ -16,11 +18,11 @@ export class SearchBarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
-  }
-
-  public update(value) {
-    this.keywordOutput.emit(value);
+    this.searchKeyword = '';
+    this.keywordControl.valueChanges.debounceTime(1000).subscribe((value) => {
+      this.searchKeyword = value;
+      this.keywordOutput.emit(value);
+    });
   }
 
 }

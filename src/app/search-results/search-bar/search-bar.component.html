@@ -1,2 +1,1 @@
-<input type="text" class="form-control" [(ngModel)]="searchKeyword"
-       (ngModelChange)="update($event)" placeholder="Search">
+<input type="text" class="form-control" [value]="searchKeyword" [formControl]="keywordControl" placeholder="Search">

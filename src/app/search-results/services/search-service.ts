@@ -13,7 +13,7 @@ export class SearchService {
 
   getArtists(keyword): Observable<any> {
     const url = this.searchUrl + keyword;
-    return this.httpClient.get(url).delay(1000);
+    return this.httpClient.get(url);
   }
 
 }
