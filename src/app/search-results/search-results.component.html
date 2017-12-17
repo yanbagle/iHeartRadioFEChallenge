@@ -1,3 +1,7 @@
-<p>
-  search-results works!
-</p>
+<app-search-bar
+  (keywordOutput)="search($event)"
+>
+</app-search-bar>
+<app-artist-display
+  [artists]="artists"
+></app-artist-display>

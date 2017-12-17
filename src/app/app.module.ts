@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { SearchBarComponent } from './search-results/search-bar/search-bar.component';
 import { ArtistDisplayComponent } from './search-results/artist-display/artist-display.component';
+import {SearchService} from './search-results/services/search-service';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -16,9 +19,11 @@ import { ArtistDisplayComponent } from './search-results/artist-display/artist-d
     ArtistDisplayComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

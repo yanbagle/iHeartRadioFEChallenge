@@ -1,3 +1,10 @@
-<p>
-  artist-display works!
-</p>
+<div class="flex-container">
+  <div class="box" *ngFor="let artist of artists">
+    <div>
+      <img [src]="artist.imageUrl">
+    </div>
+    <div>
+      {{artist.name}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+.box {
+  margin: 0.5em;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
