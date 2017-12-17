@@ -1,10 +1,10 @@
-<div class="flex-container">
-  <div class="box" *ngFor="let artist of artists">
-    <div>
-      <img [src]="artist.imageUrl">
-    </div>
-    <div>
-      {{artist.name}}
+<div class="container">
+  <div class="row">
+    <div class="col-6 col-md-4" *ngFor="let artist of artists">
+      <img class="img-fluid artist-img" [src]="artist.imageUrl"/>
+      <div class="artist-img">
+        {{artist.name}}
+      </div>
     </div>
   </div>
 </div>
